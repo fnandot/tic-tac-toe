@@ -47,6 +47,8 @@ final class PlayCommand extends Command
             $this->render($output, $game);
         }
 
+        $output->writeln("You loose {$game->currentPlayer()->name()}");
+
         return 0;
     }
 

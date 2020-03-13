@@ -9,10 +9,12 @@ use InvalidArgumentException;
 final class Board
 {
     private array $value;
+    private int $dimensions;
 
-    private function __construct(array $value)
+    private function __construct(array $value, int $dimensions = 3)
     {
         $this->value = $value;
+        $this->dimensions = $dimensions;
     }
 
     public static function initialize(): self
@@ -28,7 +30,7 @@ final class Board
 
     public function setPiece(Piece $piece, Position $position): void
     {
-        if ($position->row() > 3 || $position->column() > 3) {
+        if ($position->row() > $this->dimensions || $position->column() > $this->dimensions) {
             throw new InvalidArgumentException('Invalid position for this board');
         }
 
@@ -42,5 +44,10 @@ final class Board
     public function value(): array
     {
         return $this->value;
+    }
+
+    public function dimensions(): int
+    {
+        return $this->dimensions;
     }
 }
