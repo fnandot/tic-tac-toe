@@ -1,0 +1,13 @@
+{
+    "name": "mrobot/three-in-a-row",
+    "require": {
+        "php": "^7.4",
+        "symfony/console": "^5.0",
+        "lstrojny/functional-php": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\TicTacToe\\": "src/"
+        }
+    }
+}
