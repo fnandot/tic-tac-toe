@@ -9,3 +9,5 @@ RUN apt-get update &&\
 ARG COMPOSER_VERSION="1.6.3"
 RUN wget -O /usr/bin/composer https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar \
     && chmod +x /usr/bin/composer
+
+WORKDIR /var/www/
